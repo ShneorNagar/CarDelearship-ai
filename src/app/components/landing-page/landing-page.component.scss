@@ -1,0 +1,87 @@
+$formBgColor: rgb(255 255 255 / 40%);
+
+:host {
+  height: 100%;
+  display: block;
+}
+
+video {
+  position: absolute;
+  z-index: -1;
+  width: auto;
+  height: 100%;
+}
+
+.form-container {
+  height: 90vh;
+  form {
+    display: grid;
+    grid-template-areas: "inputs submit";
+    grid-template-columns: repeat(2, 1fr);
+    height: 100%;
+    align-items: center;
+    padding: 0 20px;
+
+    .inputs-container {
+      grid-area: inputs;
+    }
+
+    .submit-btn-container {
+      grid-area: submit;
+    }
+
+    @media (max-width: 1200px) {
+      grid-template-areas:
+        "inputs"
+        "submit";
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .submit-btn-container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.inputs-container {
+  padding: 20px;
+  background-color: $formBgColor;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputs-sub-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-color {
+  width: 100px;
+  height: 33px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-btn {
+  width: 160px;
+  height: 60px;
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+
+.form-completed {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $formBgColor;
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
