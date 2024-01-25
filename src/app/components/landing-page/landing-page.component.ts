@@ -5,6 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsersDataService } from 'src/app/services/users-data.service';
 import { UserData } from 'src/app/models/user-data.model';
 import { Subject } from 'rxjs';
+import { StatisticService } from 'src/app/services/statistic.service';
 
 interface Hobby {
   name: string;
@@ -36,11 +37,15 @@ export class LandingPageComponent {
     motorType: new FormControl('electric'),
   });
 
-  constructor(private usersDataService: UsersDataService) {}
+  constructor(
+    private usersDataService: UsersDataService,
+    private statisticService: StatisticService
+  ) {}
 
   onSubmit() {
     if (this.form.valid) {
       this.usersDataService.saveNewUser(this.form.value as UserData);
+      this.statisticService.appendFormsFilled();
       this.resetForm();
     }
   }

@@ -8,8 +8,9 @@
   >
     <mat-icon>home</mat-icon>
   </button>
-  <div class="title">
-    Dashboards
+  <div class="title-container">
+    <div class="title">Dashboards</div>
+    {{ visitorsFilledPrecentage$ | async }}% Users are filling the form
   </div>
 </header>
 <div class="data-container">
