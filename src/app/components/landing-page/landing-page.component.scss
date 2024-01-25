@@ -1,4 +1,5 @@
 $formBgColor: rgb(255 255 255 / 40%);
+$mobileBreapoint: 767px;
 
 :host {
   height: 100%;
@@ -12,12 +13,12 @@ video {
   height: 100%;
 }
 
-@media (max-width: 767px) {
+@media (max-width: $mobileBreapoint) {
   video {
     display: none;
   }
   .form-container {
-    background: url('/assets/car-poster.avif');
+    background: url("/assets/car-poster.avif");
     background-size: cover;
   }
 }
@@ -31,25 +32,96 @@ video {
     align-items: center;
     padding: 0 20px;
 
-    .inputs-container {
-      grid-area: inputs;
-    }
-
-    .submit-btn-container {
-      grid-area: submit;
-    }
-
     @media (max-width: 1200px) {
       grid-template-areas:
         "inputs"
         "submit";
       grid-template-columns: 1fr;
     }
+
+    .inputs-container {
+      display: grid;
+      gap: 16px;
+      grid-area: inputs;
+
+      .input-name {
+        grid-area: input-name;
+      }
+      .input-gender {
+        grid-area: input-gender;
+      }
+      .input-email {
+        grid-area: input-email;
+      }
+      .input-birthDate {
+        grid-area: input-birthDate;
+      }
+      .input-address {
+        grid-area: input-address;
+      }
+      .input-city {
+        grid-area: input-city;
+      }
+      .input-country {
+        grid-area: input-country;
+      }
+      .input-hobbies {
+        grid-area: input-hobbies;
+      }
+      .input-color {
+        grid-area: input-color;
+      }
+      .input-seats {
+        grid-area: input-seats;
+      }
+      .input-motorType {
+        grid-area: input-motorType;
+      }
+
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
+        "input-name input-email input-gender"
+        "input-birthDate input-address input-city"
+        "input-country input-hobbies input-color"
+        "input-seats input-motorType .";
+
+      @media (max-width: $mobileBreapoint) {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "input-name"
+          "input-gender"
+          "input-email"
+          "input-birthDate"
+          "input-address"
+          "input-city"
+          "input-country"
+          "input-hobbies"
+          "input-color"
+          "input-seats"
+          "input-motorType";
+      }
+    }
+
+    .submit-btn-container {
+      grid-area: submit;
+    }
   }
 
   .submit-btn-container {
     display: flex;
     justify-content: center;
+
+    @media (max-width: $mobileBreapoint) {
+      margin-top: 20px;
+    }
+  }
+
+  @media (max-width: $mobileBreapoint) {
+    &[staticHeight="true"] {
+      height: 100%;
+    }
+    height: auto;
+    padding: 30px 0px;
   }
 }
 
