@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "/docs",
+    "public": "dist/car-dealership",
     "ignore": [
       "firebase.json",
       "**/.*",
