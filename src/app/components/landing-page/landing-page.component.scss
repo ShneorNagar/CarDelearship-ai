@@ -12,6 +12,15 @@ video {
   height: 100%;
 }
 
+@media (max-width: 767px) {
+  video {
+    display: none;
+  }
+  .form-container {
+    background: url('/assets/car-poster.avif');
+    background-size: cover;
+  }
+}
 .form-container {
   height: 90vh;
   form {
