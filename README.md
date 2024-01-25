@@ -1,27 +1,57 @@
-# CarDealership
+# CarDealership.ai
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
+CarDealership.ai is an Angular application designed for managing car dealership data efficiently. This README.md file provides essential information for setting up, running, and understanding the structure of the application.
 
-## Development server
+## Table of Contents
+* Features
+* Installation
+* Usage
+* Project Structure
+* Dependencies
+* Contributing
+* License
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+### 1. User Input Form:
+*  Page for users to input relevant data for the application.
+* Lazy-loaded module: UserInputModule.
+* Route: /user-input.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 2. Dashboards:
 
-## Build
+* Visualization of user data collected by the CarDealership.ai application.
+* Lazy-loaded module: DashboardsModule.
+* Route: /dashboards.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 3. Lazy Loading:
+* Implemented lazy loading for optimized performance.
 
-## Running unit tests
+### 4. RxJS for Data Fetching:
+* Efficient data retrieval using RxJS.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Installation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Clone the repository:
 
-## Further help
+```bash
+git clone https://github.com/ShneorNagar/CarDelearship-ai.git
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. Install dependencies:
+
+```bash
+cd CarDelearship-ai
+npm install
+```
+
+## Usage
+1. Start the development server:
+
+```bash
+ng serve
+```
+2. Open the application in your browser:
+* User Input Form: `http://localhost:4200/user-input`
+* Dashboards: `http://localhost:4200/dashboards`
