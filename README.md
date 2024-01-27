@@ -7,9 +7,6 @@ CarDealership.ai is an Angular application designed for managing car dealership 
 * Installation
 * Usage
 * Project Structure
-* Dependencies
-* Contributing
-* License
 
 ## Features
 
