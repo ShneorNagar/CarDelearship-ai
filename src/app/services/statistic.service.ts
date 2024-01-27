@@ -11,6 +11,7 @@ export class StatisticService {
   private _formsFilled$: BehaviorSubject<number> = new BehaviorSubject<number>(
     0
   );
+  private formFilled = false;
 
   get visitorsCount$() {
     return this._visitors$.asObservable();
@@ -54,11 +55,14 @@ export class StatisticService {
   }
 
   appendFormsFilled() {
-    this._formsFilled$.next(this._formsFilled$.value + 1);
-    localStorage.setItem(
-      this.FORMS_FILLED_COUNT_KEY,
-      this._formsFilled$.value.toString()
-    );
+    if (!this.formFilled) {
+      this.formFilled = true;
+      this._formsFilled$.next(this._formsFilled$.value + 1);
+      localStorage.setItem(
+        this.FORMS_FILLED_COUNT_KEY,
+        this._formsFilled$.value.toString()
+      );
+    }
   }
 
   getPercentFormsFilled(): number {
